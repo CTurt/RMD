@@ -22,8 +22,8 @@
 			});
 			
 			function update() {
-				var text = input.value;
-				var html = converter.makeHtml(text);
+				var text = input.innerHTML;
+				var html = converter.makeHtml(text.replace(/<br>/g, "\n"));
 				
 				preview.innerHTML = html;
 			}
@@ -53,9 +53,13 @@
 				
 				<h1>RMD editor</h1>
 				
-				<textarea id="input" class="wmd-input" oninput="update()"></textarea>
+				<div style="width: 50%; padding-right: 16px; float: left;">
+					<div id="input" class="input-box" contentEditable="true" oninput="update()"></div>
+				</div>
 				
-				<div id="preview" class="wmd-panel wmd-preview"></div>
+				<div style="width: 50%; padding-left: 16px; float: right;">
+					<div id="preview" class="input-box"></div>
+				</div>
 			</div>
 		</div>
 	</body>
