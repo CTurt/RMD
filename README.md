@@ -1,5 +1,7 @@
 RMD - Realtime Markdown editing
 ===============================
-An interactive, online, realtime Markdown editor.
+An online, realtime Markdown editor.
 
-Uses [PageDown](https://code.google.com/p/pagedown/) for Markdown to HTML conversion.
+It lets me see how my articles will appear in my site's theme as I write them. It is probably of little use to anyone apart from myself.
+
+Uses [marked](https://github.com/chjj/marked) for Markdown to HTML conversion.
