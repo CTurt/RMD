@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="../css/core.css" />
+		<title>RMD</title>
+		
+		<script type="text/javascript" src="MarkdownConverter.js"></script>
+		
+		<script type="text/javascript">
+			var converter = new Markdown.Converter();
+			var input;
+			var preview;
+			
+			document.addEventListener("DOMContentLoaded", function() {
+				input = document.getElementById("input");
+				preview = document.getElementById("preview");
+				
+				update();
+			});
+			
+			function update() {
+				var text = input.value;
+				var html = converter.makeHtml(text);
+				
+				preview.innerHTML = html;
+			}
+		</script>
+	</head>
+	
+	<body>
+		<div class="page">
+			<div class="container">
+				<div class="header">
+					<a href="skills.html" class="header-element">
+						Skills
+					</a>
+					
+					<a href="articles.html" class="header-element">
+						Articles
+					</a>
+					
+					<a href="ds.html" class="header-element">
+						DS
+					</a>
+					
+					<a href="index.html" class="header-element">
+						Home
+					</a>
+				</div>
+				
+				<h1>RMD editor</h1>
+				
+				<textarea id="input" class="wmd-input" oninput="update()"></textarea>
+				
+				<div id="preview" class="wmd-panel wmd-preview"></div>
+			</div>
+		</div>
+	</body>
+</html>
