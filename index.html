@@ -17,8 +17,23 @@
 				input = document.getElementById("input");
 				preview = document.getElementById("preview");
 				
+				if(input.addEventListener) input.addEventListener('keydown', keyHandler, false);
+				else if(input.attachEvent) input.attachEvent('onkeydown', keyHandler);
+				
 				update();
 			});
+			
+			function keyHandler(e) {
+				if(e.keyCode == 9 || e.which == 9) {
+					// Insert at caret position, not at end
+					//input.innerHTML += "\t";
+					
+					update();
+					
+					if(e.preventDefault) e.preventDefault();
+					return false;
+				}
+			}
 			
 			function update() {
 				var text = input.innerHTML;
