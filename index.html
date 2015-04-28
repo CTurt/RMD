@@ -37,9 +37,17 @@
 			
 			function update() {
 				var text = input.innerHTML;
-				var html = marked(text.replace(/<br>/g, "\n"));
 				
-				preview.innerHTML = html;
+				// Firefox
+				text = text.replace(/<br>/g, "\n");
+				
+				// Chrome
+				text = text.replace(/<div>/g, "\n");
+				text = text.replace(/<\/div>/g, "");
+				
+				text = marked(text);
+				
+				preview.innerHTML = text;
 			}
 		</script>
 	</head>
