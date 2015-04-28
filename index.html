@@ -7,10 +7,9 @@
 		<link rel="stylesheet" type="text/css" href="../css/core.css" />
 		<title>RMD</title>
 		
-		<script type="text/javascript" src="MarkdownConverter.js"></script>
+		<script type="text/javascript" src="marked.js"></script>
 		
 		<script type="text/javascript">
-			var converter = new Markdown.Converter();
 			var input;
 			var preview;
 			
@@ -23,7 +22,7 @@
 			
 			function update() {
 				var text = input.innerHTML;
-				var html = converter.makeHtml(text.replace(/<br>/g, "\n"));
+				var html = marked(text.replace(/<br>/g, "\n"));
 				
 				preview.innerHTML = html;
 			}
