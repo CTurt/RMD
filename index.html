@@ -49,6 +49,10 @@
 				
 				preview.innerHTML = text;
 			}
+			
+			function exportPage() {
+				alert(preview.innerHTML);
+			}
 		</script>
 	</head>
 	
@@ -81,6 +85,7 @@
 				
 				<div style="width: 50%; padding-left: 16px; float: right;">
 					<div id="preview" class="input-box"></div>
+					<a style="float: right;" href="#" onclick="exportPage()">Export</a>
 				</div>
 			</div>
 		</div>
